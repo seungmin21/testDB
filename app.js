@@ -23,3 +23,13 @@ connection.connect((err) => {
 
   console.log('Connected to MariaDB');
 });
+
+// 테이블 생성
+connection.query('CREATE TABLE classes (id INT AUTO_INCREMENT, room_number VARCHAR(255), instructor VARCHAR(255), field VARCHAR(255), computers INT, students JSON, PRIMARY KEY (id))', (err, result) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('테이블 생성 성공');
+  }
+});
+
